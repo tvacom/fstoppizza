@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FStopPizza — NYC-Style Pizza Catering in Los Angeles</title>
+<meta name="description" content="FStopPizza caters authentic New York–style pizza across Los Angeles — on-site pizza parties, drop-off catering, by-the-slice service, weddings & corporate events. Get a free quote.">
+<meta name="theme-color" content="#1c140d">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="FStopPizza — NYC-Style Pizza Catering in Los Angeles">
+<meta property="og:description" content="Authentic New York–style pizza catering across LA. On-site parties, drop-off, by-the-slice, weddings & corporate events.">
+<meta property="og:image" content="assets/hero-pizza.jpg">
+
+<style>
+  :root{
+    --crust:#d99a3f;
+    --crust-deep:#b9742a;
+    --sauce:#c43a23;
+    --sauce-deep:#9e2a17;
+    --basil:#5a7d3a;
+    --ink:#241a12;
+    --ink-soft:#4a3c2e;
+    --muted:#7a6a58;
+    --cream:#fbf6ec;
+    --cream-alt:#f3ead8;
+    --card:#ffffff;
+    --line:#e7dcc6;
+    --radius:16px;
+    --shadow:0 10px 40px rgba(60,40,15,.10);
+    --shadow-lg:0 24px 70px rgba(60,40,15,.18);
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#f4ead8; --ink-soft:#d8c8b0; --muted:#a8967e;
+      --cream:#1c140d; --cream-alt:#241a11; --card:#271c12;
+      --line:#3a2c1c; --shadow:0 10px 40px rgba(0,0,0,.4); --shadow-lg:0 24px 70px rgba(0,0,0,.55);
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--sauce);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--cream) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:28px;height:68px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.2rem;color:var(--ink);letter-spacing:-.01em}
+  .brand img{height:40px;width:40px;border-radius:9px}
+  .brand span em{font-style:normal;color:var(--sauce)}
+  .nav .links{margin-left:auto;display:flex;gap:24px;font-size:.95rem;align-items:center}
+  .nav .links a{color:var(--ink-soft);font-weight:500}
+  .nav .links a:hover{color:var(--sauce);text-decoration:none}
+  .nav .btn-mini{background:var(--sauce);color:#fff;padding:9px 18px;border-radius:9px;font-weight:600}
+  .nav .btn-mini:hover{background:var(--sauce-deep);text-decoration:none}
+  @media(max-width:760px){.nav .links a.hide-sm{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden}
+  .hero-img-wrap{position:relative}
+  .hero-img-wrap img{width:100%;height:min(76vh,660px);object-fit:cover}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,12,6,.86) 0%,rgba(20,12,6,.58) 45%,rgba(20,12,6,.12) 100%)}
+  @media(max-width:760px){.hero-overlay{background:linear-gradient(180deg,rgba(20,12,6,.35) 0%,rgba(20,12,6,.88) 78%)}}
+  .hero-content{position:absolute;inset:0;display:flex;align-items:center}
+  .hero-content .wrap{width:100%}
+  .hero-content .col{max-width:40rem;color:#fff}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;padding:6px 14px;border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(4px)}
+  .hero h1{margin-top:18px;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.025em;font-weight:800;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+  .hero h1 em{font-style:normal;color:var(--crust)}
+  .hero p.lead{margin-top:16px;font-size:clamp(1.02rem,2vw,1.25rem);color:rgba(255,255,255,.93);max-width:34em;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+  .cta-row{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:11px;font-weight:700;font-size:1rem;transition:transform .12s ease, box-shadow .12s ease;cursor:pointer;border:none;font-family:inherit}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-primary{background:var(--sauce);color:#fff;box-shadow:0 8px 26px rgba(196,58,35,.45)}
+  .btn-primary:hover{background:var(--sauce-deep)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.22)}
+  .hero-trust{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;color:rgba(255,255,255,.85);font-size:.9rem;font-weight:500}
+  .hero-trust span{display:inline-flex;align-items:center;gap:7px}
+
+  /* sections */
+  section{padding:84px 0}
+  .section-head{max-width:46em}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+  .kicker{font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sauce)}
+  h2{font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.02em;margin-top:8px;line-height:1.12;font-weight:800}
+  .section-lead{color:var(--muted);max-width:44em;margin-top:14px;font-size:1.05rem}
+  .center .section-lead{margin-left:auto;margin-right:auto}
+  .alt{background:var(--cream-alt)}
+
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;margin-top:42px}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .14s ease,box-shadow .14s ease}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .svc .e{font-size:2.2rem}
+  .svc h3{font-size:1.15rem;font-weight:800;margin-top:14px}
+  .svc p{color:var(--muted);font-size:.95rem;margin-top:8px}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:42px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step{position:relative;padding-left:8px}
+  .step .n{width:46px;height:46px;border-radius:13px;background:var(--sauce);color:#fff;font-weight:800;font-size:1.25rem;display:grid;place-items:center;box-shadow:0 8px 22px rgba(196,58,35,.35)}
+  .step h3{font-size:1.1rem;font-weight:800;margin-top:18px}
+  .step p{color:var(--muted);margin-top:8px;font-size:.96rem}
+
+  /* showcase / slice band */
+  .showcase{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--card)}
+  @media(max-width:760px){.showcase{grid-template-columns:1fr}}
+  .showcase img{height:100%;width:100%;object-fit:cover;min-height:300px}
+  .showcase .body{padding:48px}
+  .showcase .body p{color:var(--muted);margin-top:14px}
+  .showcase .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .showcase .tags span{background:var(--cream-alt);border:1px solid var(--line);padding:7px 14px;border-radius:100px;font-size:.86rem;font-weight:600;color:var(--ink-soft)}
+
+  /* quote form */
+  .quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  @media(max-width:820px){.quote-grid{grid-template-columns:1fr;gap:32px}}
+  .quote-side .point{display:flex;gap:13px;align-items:flex-start;margin-top:18px}
+  .quote-side .point .e{font-size:1.4rem;flex:none}
+  .quote-side .point h4{font-weight:700;font-size:1rem}
+  .quote-side .point p{color:var(--muted);font-size:.93rem}
+  form.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--ink-soft)}
+  .field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:1rem;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--cream);color:var(--ink);outline:none}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sauce)}
+  .field textarea{min-height:96px;resize:vertical}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:480px){.two{grid-template-columns:1fr}}
+  form.quote .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
+
+  /* mission: make your own */
+  .mission .grid{margin-top:38px}
+  .calc-card{background:linear-gradient(160deg,var(--crust) 0%,var(--crust-deep) 100%);color:#2a1c0c;grid-column:span 2}
+  @media(max-width:560px){.calc-card{grid-column:span 1}}
+  .calc-card .styles{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .calc-card .chip{background:rgba(255,255,255,.85);color:#2a1c0c;padding:6px 13px;border-radius:100px;font-size:.82rem;font-weight:600}
+  .calc-card h3{font-size:1.3rem;font-weight:800}
+  .calc-card p{color:#3a2611;margin-top:8px;font-size:.96rem}
+  .calc-card .btn{background:var(--ink);color:var(--cream);margin-top:20px}
+  .calc-card .btn:hover{background:#000}
+
+  .gear-cat{margin-top:40px}
+  .gear-cat-title{display:flex;align-items:center;gap:10px;font-size:1.12rem;font-weight:800;margin-bottom:18px}
+  .gear-cat-title .e{font-size:1.35rem}
+  .product{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;transition:transform .14s ease,box-shadow .14s ease}
+  .product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .product .thumb{height:110px;border-radius:11px;background:var(--cream-alt);display:grid;place-items:center;font-size:2.7rem;margin-bottom:15px;border:1px solid var(--line)}
+  .product h4{font-size:.98rem;font-weight:700;line-height:1.3}
+  .product p{color:var(--muted);font-size:.88rem;margin-top:7px;flex:1}
+  .product .why{font-size:.8rem;color:var(--basil);font-weight:600;margin-top:10px}
+  .product a.buy{margin-top:15px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--ink);color:var(--cream);padding:11px;border-radius:10px;font-weight:700;font-size:.9rem}
+  .product a.buy:hover{background:var(--sauce);text-decoration:none}
+
+  .disclosure{background:var(--cream-alt);border:1px dashed var(--crust-deep);border-radius:12px;padding:18px 22px;margin-top:40px;font-size:.88rem;color:var(--ink-soft)}
+  .disclosure strong{color:var(--ink)}
+
+  /* CTA band */
+  .band{background:linear-gradient(135deg,var(--sauce) 0%,var(--sauce-deep) 100%);color:#fff;text-align:center;border-radius:var(--radius);padding:64px 32px;box-shadow:var(--shadow-lg)}
+  .band h2{color:#fff}
+  .band p{color:rgba(255,255,255,.92);max-width:34em;margin:14px auto 0}
+  .band .btn-primary{background:#fff;color:var(--sauce);margin-top:28px;box-shadow:0 8px 26px rgba(0,0,0,.2)}
+  .band .btn-primary:hover{background:#fff8f0;color:var(--sauce-deep)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+  @media(max-width:680px){.foot-top{grid-template-columns:1fr;gap:24px}}
+  .foot-top .brand{font-size:1.15rem;margin-bottom:12px}
+  .foot-top p{color:var(--muted);font-size:.92rem;max-width:28em}
+  .foot-col h5{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px}
+  .foot-col a{display:block;color:var(--ink-soft);font-size:.95rem;margin-bottom:9px}
+  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="FStopPizza logo"><span>Fstop<em>Pizza</em></span></a>
+    <nav class="links">
+      <a href="#services" class="hide-sm">Catering</a>
+      <a href="#how" class="hide-sm">How It Works</a>
+      <a href="#mission" class="hide-sm">Make Your Own</a>
+      <a class="btn-mini" href="#quote">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <div class="hero-img-wrap">
+    <img src="assets/hero-pizza.jpg" alt="A giant New York–style pepperoni pizza with crispy cupping pepperoni and a slice being pulled at a FStopPizza catering event">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="wrap">
+      <div class="col">
+        <span class="pill">🍕 NYC-style pizza catering · Los Angeles</span>
+        <h1>Real New York pizza, <em>at your party.</em></h1>
+        <p class="lead">FStopPizza brings authentic New York–style pies to events across Los Angeles — fired fresh on-site, dropped off hot, or served by the slice. Big 20&Prime; pizzas, crispy cupping pepperoni, that perfect foldable crust.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#quote">Get a Free Quote →</a>
+          <a class="btn btn-ghost" href="#services">See Catering Options</a>
+        </div>
+        <div class="hero-trust">
+          <span>📍 Serving all of LA</span>
+          <span>🔥 Fired fresh on-site</span>
+          <span>🎉 Parties · Weddings · Corporate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">Catering Services</span>
+      <h2>However you want to serve it.</h2>
+      <p class="section-lead">Authentic New York–style pizza for any size gathering in Los Angeles — flexible, fresh, and built around your event.</p>
+    </div>
+    <div class="grid">
+      <div class="svc"><div class="e">🔥</div><h3>On-Site Pizza Parties</h3><p>We bring the oven and the show. Pies fired fresh in front of your guests, served hot and fast all night long.</p></div>
+      <div class="svc"><div class="e">📦</div><h3>Drop-Off Catering</h3><p>Hot, ready-to-serve pizzas delivered to your office, party, or event — perfectly timed and set up to go.</p></div>
+      <div class="svc"><div class="e">🍕</div><h3>By the Slice</h3><p>Big 20&Prime; New York pies served by the slice — ideal for markets, open houses, and casual crowds.</p></div>
+      <div class="svc"><div class="e">🥂</div><h3>Weddings & Corporate</h3><p>Custom packages for weddings, office lunches, and large functions, with menus and headcounts dialed in.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="alt">
+  <div class="wrap">
+    <div class="showcase">
+      <img src="assets/hero-pizza.jpg" alt="20-inch New York style pizza served by the slice">
+      <div class="body">
+        <span class="kicker">The FStopPizza Pie</span>
+        <h2>20&Prime; of real New York.</h2>
+        <p>Thin, foldable, properly cheesy, and finished with crispy cupping pepperoni and that little pool of flavor in every cup. Cold-fermented dough, bright sauce, and well-browned cheese — the way a New York slice is supposed to be, made fresh in Los Angeles.</p>
+        <div class="tags">
+          <span>20&Prime; whole pies</span><span>Cupping pepperoni</span><span>Cold-fermented dough</span><span>Foldable crust</span><span>Veggie & cheese options</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">How It Works</span>
+      <h2>Booking is easy as 1–2–3.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Tell us about your event</h3><p>Send your date, guest count, and location with the quick quote form below. Takes a minute.</p></div>
+      <div class="step"><div class="n">2</div><h3>We build your menu</h3><p>We'll recommend a package — on-site, drop-off, or by the slice — and send a clear, all-in quote.</p></div>
+      <div class="step"><div class="n">3</div><h3>We bring the pizza</h3><p>We show up, fire the pies, and feed your crew. You enjoy the party. Everyone asks who catered.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="alt" id="quote">
+  <div class="wrap quote-grid">
+    <div class="quote-side">
+      <span class="kicker">Get a Quote</span>
+      <h2>Let's cater your event.</h2>
+      <p class="section-lead">Tell us a little about your gathering and we'll get back to you fast with a custom quote.</p>
+      <div class="point"><span class="e">⚡️</span><div><h4>Quick response</h4><p>We reply to most quote requests within one business day.</p></div></div>
+      <div class="point"><span class="e">📍</span><div><h4>Anywhere in LA</h4><p>From Santa Monica to Pasadena to Long Beach — we travel across Los Angeles.</p></div></div>
+      <div class="point"><span class="e">🧾</span><div><h4>No surprises</h4><p>Clear, all-in pricing. You'll know exactly what you're getting.</p></div></div>
+    </div>
+
+    <!-- mailto fallback works with no backend. Swap action to Formspree/Netlify Forms when ready. -->
+    <form class="quote" id="quoteForm">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@email.com">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(213) 555-0123">
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="date">Event date</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="field">
+          <label for="guests">Guest count</label>
+          <input type="number" id="guests" name="guests" min="1" placeholder="50">
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="service">Service type</label>
+          <select id="service" name="service">
+            <option>On-site pizza party</option>
+            <option>Drop-off catering</option>
+            <option>By the slice</option>
+            <option>Wedding / corporate event</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="location">Event location / area</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Silver Lake, LA">
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Anything else?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your event, dietary needs, vibe…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send My Quote Request →</button>
+      <p class="form-note">Prefer to talk? Email <a href="mailto:hello@fstoppizza.com">hello@fstoppizza.com</a> or call <a href="tel:+13235550123">(323) 555-0123</a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- MISSION: MAKE YOUR OWN -->
+<section id="mission" class="mission">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">Pizza Brings People Together</span>
+      <h2>Love making your own? We're all in.</h2>
+      <p class="section-lead">FStopPizza is about celebrating pizza-making — whether we're catering your party or you're firing pies at home. Here's the free dough calculator we built, plus the gear we actually reach for.</p>
+    </div>
+
+    <div class="grid">
+      <div class="svc calc-card">
+        <span class="kicker" style="color:#6b3d12">Free Tool</span>
+        <h3>The FStopPizza Dough Calculator</h3>
+        <p>Baker's percentages, pre-ferments, and fermentation timing for any style — the same numbers we use to cater. Free, installable, works offline.</p>
+        <div class="styles">
+          <span class="chip">Neapolitan</span><span class="chip">New York</span><span class="chip">Detroit</span><span class="chip">Sicilian</span><span class="chip">Roman</span>
+        </div>
+        <a class="btn" href="https://tvacom.github.io/fstoppizza-calculator/">Open the Calculator →</a>
+      </div>
+      <div class="svc"><div class="e">⚖️</div><h3>Stop guessing</h3><p>Pick a style and size; get exact flour, water, salt, yeast and oil for any number of pizzas.</p></div>
+      <div class="svc"><div class="e">📓</div><h3>Repeat your best bakes</h3><p>The built-in batch log saves every pizza so you can nail the great ones again and again.</p></div>
+    </div>
+
+    <!-- GEAR -->
+    <div style="margin-top:64px">
+      <div class="section-head">
+        <span class="kicker">Cooking Gear We Love</span>
+        <h2>The tools behind a great pie.</h2>
+        <p class="section-lead">The gear we actually reach for at home. These are Amazon affiliate links — if you buy through them, we may earn a small commission at no extra cost to you.</p>
+      </div>
+
+      <div class="gear-cat">
+        <div class="gear-cat-title"><span class="e">⚖️</span> Core dough kit</div>
+        <div class="grid">
+          <div class="product"><div class="thumb">⚖️</div><h4>0.01g Precision Scale</h4><p>Weigh yeast and salt to the hundredth of a gram — the whole reason the calculator works.</p><div class="why">Why we love it: tiny yeast doses, dead accurate.</div><a class="buy" href="https://www.amazon.com/s?k=0.01g+kitchen+scale&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🍶</div><h4>Dough Proofing Boxes</h4><p>Stackable boxes that fit the fridge and keep your cold-ferment dough balls from drying out.</p><div class="why">Why we love it: even proofing, easy storage.</div><a class="buy" href="https://www.amazon.com/s?k=dough+proofing+box&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🔪</div><h4>Stainless Bench Scraper</h4><p>Divide, cut and handle sticky high-hydration dough without a mess.</p><div class="why">Why we love it: the most-used tool on the bench.</div><a class="buy" href="https://www.amazon.com/s?k=stainless+bench+scraper&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🌾</div><h4>Tipo 00 / Bread Flour</h4><p>High-protein flour for proper structure and char. 00 for Neapolitan, bread flour for NY.</p><div class="why">Why we love it: the foundation of the bake.</div><a class="buy" href="https://www.amazon.com/s?k=tipo+00+pizza+flour&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+        </div>
+      </div>
+
+      <div class="gear-cat">
+        <div class="gear-cat-title"><span class="e">🔥</span> Baking surfaces</div>
+        <div class="grid">
+          <div class="product"><div class="thumb">⬛</div><h4>Pizza Steel</h4><p>Stores and dumps heat far better than stone — the secret to a crisp NY base at home.</p><div class="why">Why we love it: leopard-spotted bottoms at home.</div><a class="buy" href="https://www.amazon.com/s?k=pizza+steel+baking&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🪨</div><h4>Cordierite Baking Stone</h4><p>The classic budget pick for crackly crusts in any oven or grill.</p><div class="why">Why we love it: affordable, forgiving heat.</div><a class="buy" href="https://www.amazon.com/s?k=cordierite+pizza+stone&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🟦</div><h4>Detroit / Sicilian Pan</h4><p>Anodized steel pans for crispy, cheesy-edged square pies straight from the calculator.</p><div class="why">Why we love it: those caramelized cheese corners.</div><a class="buy" href="https://www.amazon.com/s?k=detroit+style+pizza+pan&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+        </div>
+      </div>
+
+      <div class="gear-cat">
+        <div class="gear-cat-title"><span class="e">🍕</span> Launch &amp; cut</div>
+        <div class="grid">
+          <div class="product"><div class="thumb">🪵</div><h4>Wooden Launch Peel</h4><p>Dough won't stick to wood — load and launch your pie with confidence.</p><div class="why">Why we love it: clean launches, every time.</div><a class="buy" href="https://www.amazon.com/s?k=wooden+pizza+peel&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🌀</div><h4>Aluminum Turning Peel</h4><p>Spin the pie mid-bake for an even cook and uniform char in a hot oven.</p><div class="why">Why we love it: no more burnt-on-one-side pies.</div><a class="buy" href="https://www.amazon.com/s?k=pizza+turning+peel&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🔪</div><h4>Rocker Pizza Cutter</h4><p>A big mezzaluna rocker slices a 20&Prime; pie clean without dragging toppings.</p><div class="why">Why we love it: clean cuts on a giant pie.</div><a class="buy" href="https://www.amazon.com/s?k=rocker+pizza+cutter&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+        </div>
+      </div>
+
+      <div class="gear-cat">
+        <div class="gear-cat-title"><span class="e">🌡️</span> Heat &amp; temp</div>
+        <div class="grid">
+          <div class="product"><div class="thumb">🔦</div><h4>Infrared Thermometer</h4><p>Point it at the stone or steel to know it's truly screaming-hot before you launch.</p><div class="why">Why we love it: removes the guesswork from heat.</div><a class="buy" href="https://www.amazon.com/s?k=infrared+thermometer&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🔥</div><h4>Outdoor Pizza Oven</h4><p>Hits 900°F+ for 60-second Neapolitan pies and real wood-fired char.</p><div class="why">Why we love it: pizzeria heat in the backyard.</div><a class="buy" href="https://www.amazon.com/s?k=ooni+gozney+pizza+oven&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+          <div class="product"><div class="thumb">🌡️</div><h4>Oven Thermometer</h4><p>Most home ovens lie about their temperature — this tells you the truth.</p><div class="why">Why we love it: trust the dial, finally.</div><a class="buy" href="https://www.amazon.com/s?k=oven+thermometer&tag=AFFILIATE-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a></div>
+        </div>
+      </div>
+
+      <div class="disclosure" id="disclosure">
+        <strong>Affiliate disclosure:</strong> FStopPizza is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate we earn from qualifying purchases. The price you pay is exactly the same. <em>(Replace this with the exact wording required by your Associates agreement once approved.)</em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section>
+  <div class="wrap">
+    <div class="band">
+      <span class="kicker" style="color:rgba(255,255,255,.85)">Los Angeles · NYC-style</span>
+      <h2>Throw a party they'll remember.</h2>
+      <p>Real New York pizza, made fresh for your event anywhere in LA. Tell us the date and we'll handle the rest.</p>
+      <a class="btn btn-primary" href="#quote">Get a Free Quote →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><img src="assets/logo.png" alt="FStopPizza logo" style="height:34px;width:34px;border-radius:8px"><span>Fstop<em style="font-style:normal;color:var(--sauce)">Pizza</em></span></a>
+        <p>NYC-style pizza catering, made fresh across Los Angeles. On-site parties, drop-off, by the slice, weddings & corporate events.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Catering</h5>
+        <a href="#services">On-site parties</a>
+        <a href="#services">Drop-off catering</a>
+        <a href="#services">By the slice</a>
+        <a href="#quote">Get a quote</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="mailto:hello@fstoppizza.com">hello@fstoppizza.com</a>
+        <a href="tel:+13235550123">(323) 555-0123</a>
+        <a href="https://instagram.com/fstoppizza" target="_blank" rel="noopener">@fstoppizza</a>
+        <a href="#mission">Make your own</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="yr"></span> FStopPizza · Los Angeles, CA</div>
+      <div><a href="#disclosure">Affiliate Disclosure</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// No-backend quote form: opens the user's email client pre-filled.
+// Swap this for Formspree / Netlify Forms / your backend when ready.
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target;
+  var get = function(id){ return (f.querySelector('#'+id)||{}).value || '—'; };
+  var subject = 'Catering quote request — ' + get('name');
+  var body =
+    'Name: ' + get('name') + '\n' +
+    'Email: ' + get('email') + '\n' +
+    'Phone: ' + get('phone') + '\n' +
+    'Event date: ' + get('date') + '\n' +
+    'Guests: ' + get('guests') + '\n' +
+    'Service: ' + get('service') + '\n' +
+    'Location: ' + get('location') + '\n\n' +
+    'Details:\n' + get('message') + '\n';
+  window.location.href = 'mailto:hello@fstoppizza.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
