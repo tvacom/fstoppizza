@@ -85,6 +85,7 @@
 
   /* sections */
   section{padding:84px 0}
+  section[id],#calculator{scroll-margin-top:84px}
   .section-head{max-width:46em}
   .center{text-align:center;margin-left:auto;margin-right:auto}
   .kicker{font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sauce)}
@@ -191,6 +192,7 @@
       <a href="#services" class="hide-sm">Catering</a>
       <a href="#how" class="hide-sm">How It Works</a>
       <a href="#mission" class="hide-sm">Make Your Own</a>
+      <a href="#calculator">🍕 Calculator</a>
       <a class="btn-mini" href="#quote">Get a Quote</a>
     </nav>
   </div>
@@ -345,7 +347,7 @@
     </div>
 
     <div class="grid">
-      <div class="svc calc-card">
+      <div class="svc calc-card" id="calculator">
         <span class="kicker" style="color:#6b3d12">Free Tool</span>
         <h3>The FStopPizza Dough Calculator</h3>
         <p>Baker's percentages, pre-ferments, and fermentation timing for any style — the same numbers we use to cater. Free, installable, works offline.</p>
